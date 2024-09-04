@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+\usepackage[portuguese]{babel}
+\newcommand{\numpy}{{\tt numpy}}   
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+
+\begin{document}
+
+\author{Juan Carlos Teran}
+\title{Mecânica Quântica I: Lista 3: Spin 1/2}
+\maketitle
+
+\medskip
+
+\begin{enumerate}
+
+\item
+Podemos mostrar que para qualquer vetor $| \chi \rangle$ representando o estado de um spin 1/2, existe uma direção  $\hat{n}$ tal que $| \chi \rangle = | + \rangle_{\hat{n}}$, onde $| + \rangle_{\hat{n}}$ é o autovetor de $\hat{\vec{S}} \cdot \hat{n}$ com autovalor positivo:
+
+(a) Obtenha os valores esperados $\langle \hat{S}_x \rangle, \langle \hat{S}_y \rangle$ e $\langle \hat{S}_z \rangle$, em função das coordenadas esféricas $\theta$, $\varphi$ do vetor unitário $\hat{n}$. Interprete os resultados.
+
+Vamos resolver envolvendo um sistema de spin \(\frac{1}{2}\).
+
+Valores Esperados \(\langle \hat{S}_x \rangle\), \(\langle \hat{S}_y \rangle\) e \(\langle \hat{S}_z \rangle\) 
+Considere que o vetor unitário \(\hat{n}\) na direção \((\theta, \varphi)\) em coordenadas esféricas pode ser escrito como:
+\begin{equation}
+    \hat{n} = \sin\theta \cos\varphi \, \hat{x} + \sin\theta \sin\varphi \, \hat{y} + \cos\theta \, \hat{z}
+\end{equation}
+
+Podemos expressar o operador \(\hat{\vec{S}} \cdot \hat{n}\) como:
+
+\begin{equation}
+  \hat{\vec{S}} \cdot \hat{n} = \hat{S}_x \sin\theta \cos\varphi + \hat{S}_y \sin\theta \sin\varphi + \hat{S}_z \cos\theta.  
+\end{equation}
+
+O estado \(|+\rangle_{\hat{n}}\) é o autovetor de \(\hat{\vec{S}} \cdot \hat{n}\) com autovalor \(\frac{\hbar}{2}\). Como \(|\chi\rangle = |+\rangle_{\hat{n}}\), o valor esperado de \(\hat{\vec{S}} \cdot \hat{n}\) é:
+
+\begin{equation}
+ \langle \chi | \hat{\vec{S}} \cdot \hat{n} | \chi \rangle = \frac{\hbar}{2}   
+\end{equation}
+
+Para obter os valores esperados \(\langle \hat{S}_x \rangle\), \(\langle \hat{S}_y \rangle\) e \(\langle \hat{S}_z \rangle\), podemos igualar os coeficientes correspondentes:
+
+\begin{equation}
+\langle \hat{S}_x \rangle = \frac{\hbar}{2} \sin\theta \cos\varphi \quad \wedge \quad  
+\langle \hat{S}_y \rangle = \frac{\hbar}{2} \sin\theta \sin\varphi \quad \wedge  \quad
+\langle \hat{S}_z \rangle = \frac{\hbar}{2} \cos\theta.
+\end{equation}
+
+Esses valores esperados correspondem às projeções do momento angular de spin ao longo das direções \(x\), \(y\) e \(z\), respectivamente. Eles dependem diretamente da orientação do vetor \(\hat{n}\) em coordenadas esféricas, o que reflete a direção em que o spin está medido.
+
+(b) Obtenha as incertezas quadradas $\Delta S_x \cdot \Delta S_y \geq \frac{\hbar}{2} |\langle S_z \rangle|$ em função das coordenadas esféricas $\theta$, $\varphi$ do vetor unitário $\hat{n}$.
+
+Para estados \(|\chi\rangle = |+\rangle_{\hat{n}}\), os valores esperados \(\langle \hat{S}_x \rangle\), \(\langle \hat{S}_y \rangle\), e \(\langle \hat{S}_z \rangle\) já foram obtidos. Agora, precisamos encontrar as incertezas \( \Delta S_x \) e \( \Delta S_y \).
+
+Como \(|\chi\rangle\) é um autovetor de \(\hat{\vec{S}} \cdot \hat{n}\) com autovalor \(\frac{\hbar}{2}\):
+
+\[
+\langle \hat{S}_x^2 \rangle = \frac{\hbar^2}{4}, \quad \langle \hat{S}_y^2 \rangle = \frac{\hbar^2}{4}, \quad \langle \hat{S}_z^2 \rangle = \frac{\hbar^2}{4}.
+\]
+
+Portanto, as incertezas são:
+
+\[
+\Delta S_x = \sqrt{\langle \hat{S}_x^2 \rangle - \langle \hat{S}_x \rangle^2} = \frac{\hbar}{2} \sqrt{1 - \sin^2\theta \cos^2\varphi},
+\]
+\[
+\Delta S_y = \sqrt{\langle \hat{S}_y^2 \rangle - \langle \hat{S}_y \rangle^2} = \frac{\hbar}{2} \sqrt{1 - \sin^2\theta \sin^2\varphi}.
+\]
+
+Assim, o produto das incertezas é:
+
+\[
+\Delta S_x \cdot \Delta S_y = \frac{\hbar^2}{4} \sqrt{(1 - \sin^2\theta \cos^2\varphi)(1 - \sin^2\theta \sin^2\varphi)}.
+\]
+
+Usando a desigualdade de Heisenberg, devemos ter:
+
+\[
+\frac{\hbar^2}{4} \sqrt{(1 - \sin^2\theta \cos^2\varphi)(1 - \sin^2\theta \sin^2\varphi)} \geq \frac{\hbar}{2} \left|\frac{\hbar}{2} \cos\theta \right|.
+\]
+
+(c) Verifique que a desigualdade mostrada no item (b) do problema 1 é satisfeita para todos os valores de $\theta$ e $\varphi$.
+
+A desigualdade de Heisenberg deve ser satisfeita para todos os valores de \(\theta\) e \(\varphi\). Precisamos mostrar que:
+
+\[
+\sqrt{(1 - \sin^2\theta \cos^2\varphi)(1 - \sin^2\theta \sin^2\varphi)} \geq \cos\theta.
+\]
+
+Isso pode ser verificado para diferentes valores de \(\theta\) e \(\varphi\). De fato, a desigualdade é satisfeita para qualquer \(\theta\) e \(\varphi\), uma vez que \(\Delta S_x \cdot \Delta S_y\) é uma expressão não negativa, enquanto o lado direito da desigualdade representa o valor absoluto do componente \(z\) do momento angular.
+
+(d) Quais os estados (especificados pelos valores de $\theta$ e $\varphi$) para os quais a desigualdade acima torna-se uma igualdade?
+
+A desigualdade de Heisenberg se torna uma igualdade quando o estado \(|\chi\rangle\) é um estado coerente de spin, ou seja, quando \( \theta = 0 \) ou \( \theta = \pi \). Nesses casos, \(\Delta S_x\) e \(\Delta S_y\) são minimizadas, e temos:
+
+\[
+\Delta S_x \cdot \Delta S_y = \frac{\hbar}{2} \left|\frac{\hbar}{2} \cos\theta \right| = \frac{\hbar^2}{4}.
+\]
+
+(e) Quais são os estados para os quais o produto de incertezas $\Delta S_x \Delta S_y$ é máximo? Pertencem ao conjunto de estados obtidos em (c)?
+
+O produto \(\Delta S_x \Delta S_y\) é máximo quando as projeções \( \langle \hat{S}_x \rangle \) e \( \langle \hat{S}_y \rangle \) são pequenas ou zero. Isso ocorre para \(\theta = \frac{\pi}{2}\) (plano equatorial), onde:
+
+\[
+\Delta S_x \cdot \Delta S_y = \frac{\hbar^2}{4}.
+\]
+
+Estes estados são coerentes com a situação onde \(\cos\theta = 0\), o que não é o caso de \(\theta = 0\) ou \(\theta = \pi\). Portanto, esses estados pertencem ao conjunto de estados com a desigualdade saturada (se tornam iguais).
+
+(f) Quais são os estados para os quais o produto de incertezas $\Delta S_x \Delta S_y$ é mínimo? Pertencem ao conjunto de estados obtidos em (c)?
+
+Para encontrar os estados em que o produto de incertezas \(\Delta S_x \Delta S_y\) é mínimo, vamos analisar as expressões obtidas anteriormente.
+
+A expressão geral para o produto de incertezas é:
+
+\[
+\Delta S_x \cdot \Delta S_y = \frac{\hbar^2}{4} \sqrt{(1 - \sin^2\theta \cos^2\varphi)(1 - \sin^2\theta \sin^2\varphi)}.
+\]
+
+Para minimizar o produto de incertezas, devemos maximizar as projeções $\langle \hat{S}_x \rangle$ e $\langle \hat{S}_y \rangle$. No caso extremo, isso ocorre quando uma das projeções é máxima (isto é, $\Delta S_x$ ou $\Delta S_y$ é mínima), o que geralmente ocorre para $\varphi = 0 \lor \varphi = \frac{\pi}{2}$.
+
+No entanto, a incerteza será mínima (zero) para o estado em que $\theta = 0 \quad \lor \quad \theta = \pi$, onde o vetor $\hat{n}$ aponta diretamente ao longo do eixo $z$. Nessas situações, $\hat{S}_x \quad \wedge \quad \hat{S}_y$ têm valor esperado zero, o que leva a:
+
+\[
+\Delta S_x = \Delta S_y = \frac{\hbar}{2},  
+\]
+e, portanto 
+\[
+\Delta S_x \Delta S_y = \frac{\hbar^2}{4}.
+\]
+
+No item (c), vimos que a desigualdade de Heisenberg é satisfeita para todos os valores de \(\theta\) e \(\varphi\), mas se torna uma igualdade especificamente para \(\theta = 0 \lor \theta = \pi\). Esses estados correspondem àqueles para os quais o produto de incertezas \(\Delta S_x \Delta S_y\) é mínimo.
+
+\item
+2
+
+\end{enumerate}
+
+\end{document}
+\grid
+\grid
