@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[portuguese]{babel}
+\usepackage{amsmath}
 \newcommand{\numpy}{{\tt numpy}}   
 
 \topmargin -.5in
@@ -18,6 +19,111 @@
 
 \begin{enumerate}
 
+\item
+(a) Utilizando as representações para as componentes de um spin 1/2 em termos das matrizes de Pauli, verifique a relação de comutação:
+\begin{equation}
+  [\hat{S}_x, \hat{S}_y] = i\hbar \hat{S}_z  
+\end{equation}
+
+As componentes do spin \(\hat{S}_x\), \(\hat{S}_y\) e \(\hat{S}_z\) para um sistema de spin \(1/2\) são dadas pelas matrizes de Pauli, multiplicadas por \(\frac{\hbar}{2}\):
+
+\[
+\hat{S}_x = \frac{\hbar}{2} \sigma_x, \quad \hat{S}_y = \frac{\hbar}{2} \sigma_y, \quad \hat{S}_z = \frac{\hbar}{2} \sigma_z,
+\]
+
+onde \(\sigma_x\), \(\sigma_y\) e \(\sigma_z\) são as matrizes de Pauli:
+
+\[
+\sigma_x = \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, \quad
+\sigma_y = \begin{pmatrix}
+0 & -i \\
+i & 0
+\end{pmatrix}, \quad
+\sigma_z = \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}.
+\]
+
+A relação de comutação entre as componentes do spin é dada por:
+
+\[
+[\hat{S}_x, \hat{S}_y] = \hat{S}_x \hat{S}_y - \hat{S}_y \hat{S}_x.
+\]
+
+Substituindo \(\hat{S}_x\) e \(\hat{S}_y\) pelas suas respectivas expressões:
+
+\[
+[\hat{S}_x, \hat{S}_y] = \left(\frac{\hbar}{2} \sigma_x\right)\left(\frac{\hbar}{2} \sigma_y\right) - \left(\frac{\hbar}{2} \sigma_y\right)\left(\frac{\hbar}{2} \sigma_x\right).
+\]
+
+\[
+[\hat{S}_x, \hat{S}_y] = \frac{\hbar^2}{4} \left( \sigma_x \sigma_y - \sigma_y \sigma_x \right).
+\]
+
+Sabemos que:
+
+\[
+\sigma_x \sigma_y = i\sigma_z, \quad \sigma_y \sigma_x = -i\sigma_z.
+\]
+
+Portanto:
+
+\[
+\sigma_x \sigma_y - \sigma_y \sigma_x = 2i\sigma_z.
+\]
+
+Assim, a relação de comutação se torna:
+
+\[
+[\hat{S}_x, \hat{S}_y] = \frac{\hbar^2}{4} \cdot 2i\sigma_z = i\hbar \frac{\hbar}{2} \sigma_z = i\hbar \hat{S}_z.
+\]
+
+Portanto, verificamos que:
+
+\[
+[\hat{S}_x, \hat{S}_y] = i\hbar \hat{S}_z.
+\]
+
+
+(b) Utilizando este resultado junto com a desigualdade de Heisenberg geral, prove que, em qualquer estado |ψ⟩ de um spin 1/2,
+
+$\Delta S_x \cdot \Delta S_y \geq \frac{\hbar}{2} |\langle \hat{S}_z \rangle|$
+
+Para provar a desigualdade de Heisenberg, usaremos a relação de incerteza geral:
+
+\[
+\Delta A \cdot \Delta B \geq \frac{1}{2} |\langle [A, B] \rangle|,
+\]
+
+onde \(A = \hat{S}_x\) e \(B = \hat{S}_y\). Substituindo a relação de comutação que acabamos de verificar:
+
+\[
+\Delta S_x \cdot \Delta S_y \geq \frac{1}{2} |\langle [\hat{S}_x, \hat{S}_y] \rangle|.
+\]
+
+Sabemos que:
+
+\[
+\langle [\hat{S}_x, \hat{S}_y] \rangle = i\hbar \langle \hat{S}_z \rangle.
+\]
+
+Portanto:
+
+\[
+\Delta S_x \cdot \Delta S_y \geq \frac{1}{2} |\langle i\hbar \hat{S}_z \rangle| = \frac{\hbar}{2} |\langle \hat{S}_z \rangle|.
+\]
+
+Assim, provamos que:
+
+\[
+\Delta S_x \cdot \Delta S_y \geq \frac{\hbar}{2} |\langle \hat{S}_z \rangle|.
+\]
+
+Essa é a desigualdade de Heisenberg para um sistema de spin \(1/2\).
 \item
 Podemos mostrar que para qualquer vetor $| \chi \rangle$ representando o estado de um spin 1/2, existe uma direção  $\hat{n}$ tal que $| \chi \rangle = | + \rangle_{\hat{n}}$, onde $| + \rangle_{\hat{n}}$ é o autovetor de $\hat{\vec{S}} \cdot \hat{n}$ com autovalor positivo:
 
@@ -136,11 +242,8 @@ e, portanto
 
 No item (c), vimos que a desigualdade de Heisenberg é satisfeita para todos os valores de \(\theta\) e \(\varphi\), mas se torna uma igualdade especificamente para \(\theta = 0 \lor \theta = \pi\). Esses estados correspondem àqueles para os quais o produto de incertezas \(\Delta S_x \Delta S_y\) é mínimo.
 
-\item
-2
+
 
 \end{enumerate}
 
 \end{document}
-\grid
-\grid
